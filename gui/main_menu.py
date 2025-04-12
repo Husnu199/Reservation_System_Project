@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 from gui.new_customer import NewCustomerWindow
 from gui.reservation_window import ReservationWindow
-from gui.reservation_list import ReservationListWindow  # ✅ Listeleme ekranı
+from gui.reservation_list import ReservationListWindow  
 from tkcalendar import DateEntry
 from gui.customer_list import CustomerListWindow
 
