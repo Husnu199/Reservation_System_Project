@@ -8,7 +8,6 @@ A real-world restaurant reservation management system built with **Python (Tkint
 
 This project was originally intended to be built with **SQLite**, but was **migrated entirely to MySQL** to resemble a real-world production environment.
 
-> ✅ Every module was written and understood by the developer  
 > ✅ Strong grasp of GUI design, database integration, and user flows
 
 ---
