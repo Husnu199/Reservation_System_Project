@@ -5,7 +5,7 @@ def get_connection():
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password=".",  # Your Password should be here
+        password="",  # Your Password should be here
         database="reservation_system"
     )
 

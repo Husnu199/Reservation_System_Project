@@ -26,7 +26,11 @@ class ReservationWindow:
         self.date_entry = DateEntry(self.window)
         self.date_entry.grid(row=3, column=1)
 
-        tk.Button(self.window, text="Save", command=self.save_reservation).grid(row=4, column=0, columnspan=2)
+        tk.Label(self.window, text="Time (HH:MM):").grid(row=4, column=0)
+        self.time_entry = tk.Entry(self.window)
+        self.time_entry.grid(row=4, column=1)
+
+        tk.Button(self.window, text="Save", command=self.save_reservation).grid(row=5, column=0, columnspan=2)
 
         self.window.bind('<Return>', self.enter_pressed)
 
@@ -38,8 +42,9 @@ class ReservationWindow:
         table_no = self.table_entry.get()
         party_size = self.party_entry.get()
         date = self.date_entry.get_date()
+        time = self.time_entry.get()
 
-        if not name or not table_no or not party_size or not date:
+        if not name or not table_no or not party_size or not date or not time:
             messagebox.showerror("Error", "Please fill all fields")
             return
 
@@ -57,11 +62,18 @@ class ReservationWindow:
 
             customer_id = result[0]
 
-            # Connect reservation to customers table
+            # Save reservation with time
             cursor.execute("""
-                INSERT INTO Reservations (reservation_name, reservation_table, party_size, reservation_date, customer_id)
-                VALUES (%s, %s, %s, %s, %s)
-            """, (name, table_no, party_size, date, customer_id))
+                INSERT INTO Reservations (
+                    reservation_name,
+                    reservation_table,
+                    party_size,
+                    reservation_date,
+                    reservation_time,
+                    customer_id
+                )
+                VALUES (%s, %s, %s, %s, %s, %s)
+            """, (name, table_no, party_size, date, time, customer_id))
 
             conn.commit()
             messagebox.showinfo("Success", "Reservation saved successfully.")
@@ -72,4 +84,5 @@ class ReservationWindow:
 
         finally:
             conn.close()
+
 

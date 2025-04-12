@@ -22,7 +22,7 @@ class MainMenu:
         tk.Button(self.frame, text="Make a Reservation", command=self.open_reservation_window).pack(pady=5)
 
         # list reservation button
-        tk.Button(self.frame, text="Show All Reservations", command=self.open_res_list).pack(pady=5)
+        tk.Button(self.frame, text="Show All Reservations", command=lambda: ReservationListWindow(self.root)).pack(pady=5)
 
 
         # list customer button
