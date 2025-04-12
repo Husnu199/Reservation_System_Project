@@ -50,5 +50,9 @@ This project was originally intended to be built with **SQLite**, but was **migr
 
 ---
 
-## 🔗 Project Structure
+🧑‍💻 Author
+Hüsnü Yalçınkaya
+Electrical & Electronics Engineer | CrossFit Athlete | Cyber Security Analyst
+📩 husnu199@hotmail.com
+🔗 https://www.linkedin.com/huesnue-yalcinkaya/
 
